@@ -29,11 +29,32 @@ class LinkedList:
           while current_node.next:
             current_node = current_node.next
           current_node.next = added_node
+
+    def removeFromStart(self):
+        if self.head == None:
+            return
+        else: 
+            new_head = self.head.next
+            self.head = new_head
+
+    def removeFromEnd(self):
+        if self.head == None:
+            return
+        else:
+            current_node = self.head
+            previous_node = None
+            while current_node.next:
+                previous_node = current_node
+                current_node = current_node.next
+            else:
+                previous_node.next = None
             
-        
-        # elif self.head.next == None:
-        #   self.head.next = added_node
-        # elif 
+
+    def printList(self):
+        current_node = self.head
+        while current_node:
+            print(current_node.data)
+            current_node = current_node.next
 
 new_linked_list = LinkedList()
 
@@ -45,8 +66,7 @@ new_linked_list.addAtStart('Hej')
 
 new_linked_list.addAtEnd('Hola')
 
-current_node = new_linked_list.head
-while current_node:
-    print(current_node.data)
-    current_node = current_node.next
-    
+new_linked_list.removeFromEnd()
+
+new_linked_list.printList()
+
