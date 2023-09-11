@@ -42,13 +42,9 @@ class LinkedList:
             return
         else:
             current_node = self.head
-            previous_node = None
-            while current_node.next:
-                previous_node = current_node
+            while current_node.next.next:
                 current_node = current_node.next
-            else:
-                previous_node.next = None
-            
+            current_node.next = None
 
     def printList(self):
         current_node = self.head
