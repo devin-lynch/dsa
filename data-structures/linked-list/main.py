@@ -32,6 +32,7 @@ class LinkedList:
 
     def removeFromStart(self):
         if self.head == None:
+            print('The list is already empty')
             return
         else: 
             new_head = self.head.next
@@ -39,14 +40,21 @@ class LinkedList:
 
     def removeFromEnd(self):
         if self.head == None:
+            print('The list is already empty')
             return
+        elif self.head.next == None:
+            self.head = None
+        elif self.head.next.next == None:
+            self.head.next = None
         else:
             current_node = self.head
             while current_node.next.next:
                 current_node = current_node.next
+            # print('Removed', current_node.next.data, "from the list")
             current_node.next = None
 
     def printList(self):
+        # print('self.head:', self.head.data)
         current_node = self.head
         while current_node:
             print(current_node.data)
@@ -63,6 +71,4 @@ new_linked_list.addAtStart('Hej')
 new_linked_list.addAtEnd('Hola')
 
 new_linked_list.removeFromEnd()
-
-new_linked_list.printList()
 
