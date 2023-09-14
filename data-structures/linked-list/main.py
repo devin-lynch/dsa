@@ -22,7 +22,7 @@ class LinkedList:
 
     def addAtEnd(self, data):
         added_node = Node(data)
-        if self.head == None:
+        if self.head is None:
             self.head = added_node
         else:
           current_node = self.head
@@ -31,7 +31,7 @@ class LinkedList:
           current_node.next = added_node
 
     def removeFromStart(self):
-        if self.head == None:
+        if self.head is None:
             print('The list is already empty')
             return
         else: 
@@ -39,12 +39,12 @@ class LinkedList:
             self.head = new_head
 
     def removeFromEnd(self):
-        if self.head == None:
+        if self.head is None:
             print('The list is already empty')
             return
-        elif self.head.next == None:
+        elif self.head.next is None:
             self.head = None
-        elif self.head.next.next == None:
+        elif self.head.next.next is None:
             self.head.next = None
         else:
             current_node = self.head
